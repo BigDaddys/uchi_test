@@ -22,8 +22,33 @@ main {
 
   &_num,
   &_total {
-    margin: 0 15px;
     font-size: 45px;
+  }
+
+  &_num {
+    margin: 0 11px;
+
+    &.is-current {
+      background-color: #e67e22;
+      border-radius: 5px;
+      padding: 2px 4px;
+    }
+  }
+
+  &_total {
+    margin: 0 15px;
+    width: 70px;
+    color: #000;
+
+    &:not([disabled]) {
+      border: 2px solid #ccc;
+      border-radius: 7px;
+      text-align: center;
+
+      &.is-error {
+        color: #e74c3c;
+      }
+    }
   }
 
   &_operator {
@@ -91,7 +116,7 @@ main {
       height: 18px;
       width: 1px;
       background-color: #000;
-      z-index: 10;
+      z-index: 8;
     }
 
     &:nth-child(5n + 1) {
@@ -127,5 +152,79 @@ main {
     font-size: 21px;
     line-height: 21px;
     text-align: center;
+  }
+
+  &_segment {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 108px;
+    width: calc(39px * 7);
+    z-index: 9;
+
+    + .b-rule_segment {
+
+      .b-segment_arrow {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .b-segment_input {
+    display: block;
+    width: 30px;
+    height: 35px;
+    margin: 0 auto 10px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+
+    &[disabled] {
+      border: none;
+      font-size: 30px;
+    }
+
+    &.is-error {
+      color: #e74c3c;
+    }
+  }
+
+  .b-segment_arrow {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    margin-left: 1px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border-color: #8e44ad;
+    }
+
+    &::before {
+      width: calc(100% - 2px);
+      height: 120px;
+      bottom: -65px;
+      right: 0;
+      left: 0;
+      border-width: 2px;
+      border-style: solid;
+      border-radius: 100%;
+    }
+
+    &::after {
+      right: 1px;
+      bottom: 3px;
+      width: 12px;
+      height: 12px;
+      border-right-width: 2px;
+      border-right-style: solid;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      transform: rotate(20deg);
+    }
   }
 }

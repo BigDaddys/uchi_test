@@ -6,10 +6,16 @@ block content
     span.b-example_operator +
     span.b-example_num 4
     span.b-example_operator =
-    span.b-example_total ?
+    input.b-example_total(type="text", disabled, value="?")
 
   .b-rule
     .b-rule_axis
+      //- .b-rule_segment
+        input.b-segment_input(type="text", autofocus, disabled, value="7")
+        .b-segment_arrow
+      //- .b-rule_segment(style="left: calc(39px * 7); width: calc(39px * 4);")
+        input.b-segment_input.is-error(type="text", autofocus, value="4")
+        .b-segment_arrow
       ul.b-rule_decimals
         - var n = 0;
         while n <= 20
