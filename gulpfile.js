@@ -22,7 +22,6 @@ const replace       = require('gulp-replace');
 const PATHS = {
   dev: ['_dev/'],
   prod: ['_prod/'],
-  imgs: 'images/*.{jpg,png}',
   jsApp: [
     'js/main.js'
   ],
@@ -131,13 +130,6 @@ gulp.task('cleanFullProd', () => gulp.src('_prod', {read: false}).pipe(remove())
 
 //------------------------------
 
-//------------------------------ Copy Files Tasks
-
-gulp.task('copyDevImg', () => gulp.src(PATHS.imgs).pipe(gulp.dest(PATHS.dev + 'images/')));
-gulp.task('copyProdImg', () => gulp.src(PATHS.imgs).pipe(gulp.dest(PATHS.prod + 'images/')));
-
-//------------------------------
-
 //------------------------------ Pug Compile Tasks
 
 gulp.task('pugDev', () => gulp.src(PATHS.pug)
@@ -196,8 +188,7 @@ gulp.task('dev', () => runSequence(
   'cleanDev',
   'sassDev',
   ['jsAppDev','jsLibsDev'],
-  'pugDev',
-  'copyDevImg'
+  'pugDev'
 ));
 
 gulp.task('prod', () => runSequence(
@@ -205,6 +196,5 @@ gulp.task('prod', () => runSequence(
   ['jsAppDev','jsLibsDev'],
   'minify',
   'pugProd',
-  'sassProd',
-  'copyProdImg'
+  'sassProd'
 ));

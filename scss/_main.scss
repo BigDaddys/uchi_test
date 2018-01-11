@@ -1,6 +1,131 @@
 main {
-  background-color: #fff;
-  margin: 0 auto;
   max-width: $max-width-content;
-  position: relative;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+  @include align-center;
+}
+
+.b-example {
+  line-height: 40px;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 120px;
+
+  &_num,
+  &_total,
+  &_operator {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &_num,
+  &_total {
+    margin: 0 15px;
+    font-size: 45px;
+  }
+
+  &_operator {
+    font-size: 35px;
+  }
+}
+
+.b-rule {
+  width: 875px;
+  height: 83px;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, #fff8d1 0, #f7eacd 100%);
+
+  &_axis {
+    position: relative;
+    width: 815px;
+    height: 22px;
+    line-height: 22px;
+    padding-top: 9px;
+    margin-left: 35px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      top: 20px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      margin-top: -1px;
+      background: #7f7d6e;
+    }
+
+    &::after {
+      right: 0;
+      top: 13px;
+      width: 14px;
+      height: 14px;
+      border-top: 2px solid #7f7d6e;
+      border-right: 2px solid #7f7d6e;
+      transform: rotate(45deg);
+    }
+  }
+
+  &_decimals {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+  }
+
+  &_item-decimal {
+    position: relative;
+    width: 39px;
+    height: 18px;
+    margin-top: 2px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 18px;
+      width: 1px;
+      background-color: #000;
+      z-index: 10;
+    }
+
+    &:nth-child(5n + 1) {
+
+      &::before {
+        width: 3px;
+        left: -1px;
+      }
+
+      .b-rule_num {
+        top: 31px;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 26px;
+      }
+    }
+
+    &:nth-child(10n + 1) {
+
+      &::before {
+        height: 22px;
+        top: -2px;
+      }
+    }
+  }
+
+  &_num {
+    position: absolute;
+    top: 33px;
+    left: -20px;
+    width: 40px;
+    height: 22px;
+    font-size: 21px;
+    line-height: 21px;
+    text-align: center;
+  }
 }

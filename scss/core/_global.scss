@@ -5,9 +5,10 @@ img {
 }
 
 body {
-  font: $base-font-size $default-font-family;
+  position: relative;
   min-width: $min-width;
+  height: 100vh;
+  font: $base-font-size $default-font-family;
   color: $text-color;
   background-color: #f7f7f7;
-  overflow-x: hidden;
 }

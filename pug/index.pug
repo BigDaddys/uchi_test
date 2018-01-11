@@ -1,4 +1,18 @@
 extends includes/layout.pug
 
 block content
+  .b-example
+    span.b-example_num 7
+    span.b-example_operator +
+    span.b-example_num 4
+    span.b-example_operator =
+    span.b-example_total ?
+
+  .b-rule
+    .b-rule_axis
+      ul.b-rule_decimals
+        - var n = 0;
+        while n <= 20
+          li.b-rule_item-decimal
+            span.b-rule_num= n++
 

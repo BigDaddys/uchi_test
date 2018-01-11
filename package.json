@@ -1,14 +1,15 @@
 {
   "name": "test_task",
   "version": "1.0.0",
-  "description": "Тестовое задание «Ось ­2»",
+  "description": "Тестовое задание «Ось 2»",
   "license": "ISC",
+  "homepage": "https://bigdaddys.github.io/",
   "author": {
     "name": "Щёлоков Александр"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/memo_kavkaz/default_template_article.git"
+    "url": "git@github.com:BigDaddys/uchi_test.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
