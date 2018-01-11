@@ -1,0 +1,13 @@
+// Fonts List
+$sans-serif-fonts: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+// Base Font
+$base-font-size: 16px !default;
+$default-font-family: $sans-serif-fonts;
+
+// Width
+$min-width: _breakpoints-values(mobile-small);
+$max-width-content: 1140px;
+
+// Colors
+$text-color: #242424;

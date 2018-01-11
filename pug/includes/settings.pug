@@ -1,0 +1,11 @@
+block vars
+  //- Путь до css
+  - var pathCSSAssets = "css/" + ((env == "prod") ? "assets.min.css" : "assets.dev.css") + "?v=" + Date.now()
+
+  //- Путь до картинок
+  - var pathImg = "images/"
+
+  //- Путь до js
+  - var pathJS = "js/"
+  - var pathJSApp = pathJS + ((env == "prod") ? "app.min.js" : "app.js") + "?v=" + Date.now()
+  - var pathJSLibs = pathJS + ((env == "prod") ? "libs.min.js" : "libs.js") + "?v=" + Date.now()

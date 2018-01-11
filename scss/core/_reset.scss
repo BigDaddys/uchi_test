@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+*::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  @include font-smoothing;
+}
+
+@at-root {
+  @-ms-viewport {
+    width: device-width;
+  }
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+article,aside,details,figcaption,figure,footer,header,main,nav,section,canvas,summary {
+  display: block;
+}
+
+figure {
+  position: relative;
+
+  img {
+    @include img-full;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+
+ul, ol {
+  list-style: none;
+  list-style-image: none;
+  padding: 0;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  tab-size: 2;
+}
+
+audio,video {
+  display: inline-block;
+}
+
+audio {
+
+  &:not([controls]) {
+    display: none;
+    height: 0;
+  }
+}
+
+[hidden],template {
+  display: none !important;
+}
+
+table,th,td {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    outline-width: 0;
+  }
+}
+
+button,input,select,textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: middle;
+  line-height: normal;
+
+  &:focus {
+    outline-width: 0;
+  }
+}
+
+button {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  user-select: none;
+
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  &:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox;
+}
+
+button,input {
+  overflow: visible;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+button,select {
+  text-transform: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+input,textarea {
+
+  &:focus {
+    &::placeholder {
+      color: transparent !important;
+    }
+  }
+}
+
+svg {
+  display: block;
+  width: 100%;
+
+  &:not(:root) {
+    overflow: hidden;
+  }
+}
+
+a,area,button,[role="button"],input,label,select,summary,textarea {
+  touch-action: manipulation;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+img {
+  border-style: none;
+  -ms-interpolation-mode: bicubic;
+  image-rendering: crisp-edges; // или попробовать pixelated
+}
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item;
+}
+

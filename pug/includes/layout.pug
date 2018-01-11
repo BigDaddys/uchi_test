@@ -1,0 +1,9 @@
+doctype html
+include settings.pug
+block vars
+html(lang="ru", dir="ltr")
+  include head.pug
+  body(class="no-js")
+    main
+      block content
+    include js.pug

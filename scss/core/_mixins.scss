@@ -1,0 +1,39 @@
+// Percentage to base width
+@function per($block-width, $context-width: $max-device-width) {
+  @return percentage($block-width/$context-width);
+}
+
+// Full width image
+@mixin img-full {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+// Aligns the element vertically middle
+@mixin align-center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+// Font-smoothing mixin
+@mixin font-smoothing($value: antialiased) {
+  @if $value == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}

@@ -1,0 +1,15 @@
+node_modules
+npm-debug.log
+.*
+!.gitignore
+!.htaccess
+!.babelrc
+.vscode
+_prod/
+_preprod/
+_dev/
+tmp/
+*.html
+sources/
+yarn.lock
+package-lock.json

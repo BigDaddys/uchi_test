@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+img {
+  @include img-full;
+}
+
+body {
+  font: $base-font-size $default-font-family;
+  min-width: $min-width;
+  color: $text-color;
+  background-color: #f7f7f7;
+  overflow-x: hidden;
+}
