@@ -27,11 +27,11 @@ main {
 
   &_num {
     margin: 0 11px;
+    border-radius: 5px;
+    padding: 2px 4px;
 
     &.is-current {
       background-color: #e67e22;
-      border-radius: 5px;
-      padding: 2px 4px;
     }
   }
 
@@ -39,9 +39,10 @@ main {
     margin: 0 15px;
     width: 70px;
     color: #000;
+    border: 2px solid transparent;
 
     &:not([disabled]) {
-      border: 2px solid #ccc;
+      border-color: #ccc;
       border-radius: 7px;
       text-align: center;
 
