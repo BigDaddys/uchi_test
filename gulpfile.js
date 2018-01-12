@@ -25,9 +25,6 @@ const PATHS = {
   jsApp: [
     'js/main.js'
   ],
-  jsLibs: [
-    'js/libs/jquery.js'
-  ],
   scss: 'scss/app.scss',
   pug: ['pug/*.pug', '!pug/includes/**/*.pug']
 };
@@ -44,11 +41,6 @@ gulp.task('jsAppDev', () => gulp.src(PATHS.jsApp)
   .pipe(babel())
   .pipe(concat('app.js'))
   .pipe(sourcemaps.write("."))
-  .pipe(gulp.dest(PATHS.dev + 'js/'))
-);
-
-gulp.task('jsLibsDev', () => gulp.src(PATHS.jsLibs)
-  .pipe(concat('libs.js'))
   .pipe(gulp.dest(PATHS.dev + 'js/'))
 );
 
@@ -187,13 +179,13 @@ gulp.task('default', ['brSync', 'watch']);
 gulp.task('dev', () => runSequence(
   'cleanDev',
   'sassDev',
-  ['jsAppDev','jsLibsDev'],
+  'jsAppDev',
   'pugDev'
 ));
 
 gulp.task('prod', () => runSequence(
   'cleanProd',
-  ['jsAppDev','jsLibsDev'],
+  'jsAppDev',
   'minify',
   'pugProd',
   'sassProd'
